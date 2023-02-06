@@ -2,17 +2,16 @@ const React = require('react');
 const Layout = require('./Layout');
 
 module.exports = function Game({ card }) {
-  // console.log(findAllCards)
-
-  // const { findAllCards } = props;
-  // console.log(findAllCards)
-  // { const randomId = Math.Floor(Math.random() * findAllCards.length); }
   return (
     <Layout>
       <div className="gameContainer">
-        {card.question}
-        <button id={`${card.id}`} name="yes" type="button">Да</button>
-        <button id={`${card.id}`} name="no" type="button">Нет</button>
+        <div id="question" className="d-flex flex-wrap align-items-center justify-content-center">
+          {card.question}
+        </div>
+        <div className="d-flex justify-content-center" style={{ height: '30%', width: '100%' }}>
+          <button id={`${card.id}`} className="btn btn-outline-dark mr-2" name="yes" type="button">Да</button>
+          <button id={`${card.id}`} className="btn btn-outline-dark mr-2" name="no" type="button">Нет</button>
+        </div>
       </div>
       {/* {question, answer} */}
     </Layout>
