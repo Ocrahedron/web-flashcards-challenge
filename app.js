@@ -7,15 +7,14 @@ const { sequelize } = require('./db/models');
 
 const app = express();
 
-const authorization = require('./routers/openAuthorization')
+const mainPage = require('./routers/mainpage');
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public/')));
 
-app.use('/', authorization)
-
+app.use('/', mainPage);
 
 app.listen(process.env.PORT, async () => {
   try {
