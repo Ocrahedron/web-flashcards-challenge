@@ -17,10 +17,10 @@ module.exports = function Layout({ children }) {
         <nav className="navbar navbar-light bg-light">
           <a className="navbar-brand" href="#">Flashcards</a>
           <div className="d-flex justify-content-end">
-            <a className="btn btn-outline-success mr-2" href="/authorization">Register</a>
-            <a className="btn btn-outline-success mr-2" href="/entering">Login</a>
-            <a className="btn btn-outline-success" href="/">Home</a>
 
+            <a id="btnReg" className="btn btn-outline-dark mr-2" href="/authorization">Register</a>
+            <a id="btnLog" className="btn btn-outline-dark mr-2" href="/entering">Login</a>
+            <a id="btnHom" className="btn btn-outline-dark mr-2" href="/">Home</a>
           </div>
         </nav>
         {children}
