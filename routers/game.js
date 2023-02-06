@@ -6,14 +6,23 @@ const { Card } = require('../db/models');
 const router = express.Router();
 
 router.get('/:id', async (req, res) => {
-  const { id } = req.params;
-  const findAllCards = await Card.findAll({ where: { deck_id: id }, raw: true });
-  
+  try {
+    const { id } = req.params;
+    const findAllCards = await Card.findAll({ where: { deck_id: id }, raw: true });
+    const randomId = Math.floor(Math.random() * findAllCards.length);
+    const card = findAllCards[randomId];
+    renderTemplate(Game, { card }, res);
+  } catch (error) {
+    console.log(error);
+  }
+});
 
-  // let random = Math.floor(Math.random()*)
-  
-  
-  renderTemplate(Game, { findAllCards }, res);
+router.get('/game/:id', (req, res) => {
+  try {
+    console.log(req.query);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;
