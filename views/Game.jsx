@@ -2,23 +2,17 @@ const React = require('react');
 const Layout = require('./Layout');
 
 module.exports = function Game({ card }) {
-  // console.log(findAllCards)
-
-  // const { findAllCards } = props;
-  // console.log(findAllCards)
-  // { const randomId = Math.Floor(Math.random() * findAllCards.length); }
   return (
     <Layout>
-      <div className="gameContainer">
+      <div className="gameContainer" id="question" className="d-flex flex-wrap align-items-center justify-content-center">
         <form action={`/game/${card.deck_id}/${card.id}`} method="post">
-          <div className="card">
+          <div className="card" className="d-flex justify-content-center" style={{ height: '30%', width: '100%' }}>
             <p>{card.question}</p>
             <button id={`${card.id}`} name="да" type="button">Да</button>
             <button id={`${card.id}`} name="нет" type="button">Нет</button>
           </div>
         </form>
       </div>
-      {/* {question, answer} */}
     </Layout>
   );
 };

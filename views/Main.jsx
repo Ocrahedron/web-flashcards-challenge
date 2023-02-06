@@ -10,7 +10,6 @@ module.exports = function Main() {
           <a href="/game/1">
             <div className="g-col-6 g-col-md-4 mb-3 deck">Карточка 1</div>
           </a>
-
           <a href="/game/2">
             <div id="2" className="g-col-6 g-col-md-4 mb-3 deck">Карточка 2</div>
           </a>
