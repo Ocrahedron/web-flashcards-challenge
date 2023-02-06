@@ -18,6 +18,7 @@ module.exports = function Layout({ children }) {
             <a className="btn btn-outline-success mr-2" href="/authorization">Register</a>
             <a className="btn btn-outline-success mr-2" href="/entering">Login</a>
             <a className="btn btn-outline-success" href="/">Home</a>
+
           </div>
         </nav>
         {children}

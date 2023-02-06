@@ -8,8 +8,11 @@ const { sequelize } = require('./db/models');
 const app = express();
 
 const mainPage = require('./routers/mainpage');
+
 const authorization = require('./routers/authorization');
 const entering = require('./routers/entering');
+
+
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
@@ -17,8 +20,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public/')));
 
 app.use('/', mainPage);
+
 app.use('/authorization', authorization);
 app.use('/entering', entering);
+
+
 
 app.listen(process.env.PORT, async () => {
   try {
