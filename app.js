@@ -7,14 +7,14 @@ const { sequelize } = require('./db/models');
 
 const app = express();
 
+const mainPage = require('./routers/mainpage');
+
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public/')));
 
-app.get('/', (req, res) => {
-  res.send('Hello');
-});
+app.use('/', mainPage);
 
 app.listen(process.env.PORT, async () => {
   try {
