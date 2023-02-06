@@ -10,9 +10,13 @@ module.exports = function Game({ card }) {
   return (
     <Layout>
       <div className="gameContainer">
-        {card.question}
-        <button id={`${card.id}`} name="yes" type="button">Да</button>
-        <button id={`${card.id}`} name="no" type="button">Нет</button>
+        <form action={`/game/${card.deck_id}/${card.id}`} method="post">
+          <div className="card">
+            <p>{card.question}</p>
+            <button id={`${card.id}`} name="да" type="button">Да</button>
+            <button id={`${card.id}`} name="нет" type="button">Нет</button>
+          </div>
+        </form>
       </div>
       {/* {question, answer} */}
     </Layout>
