@@ -1,5 +1,5 @@
-const cardContainer = document.querySelector('.container');
+// const cardContainer = document.querySelector('.container');
 
-cardContainer.addEventListener('click', (event) => {
-  console.log(event.target.id);
-});
+// cardContainer.addEventListener('click', (event) => {
+//   console.log(event.target.id);
+// });
