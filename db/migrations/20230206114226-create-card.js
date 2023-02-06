@@ -16,6 +16,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       deck_id: {
+
         type: Sequelize.INTEGER,
         references: { model: 'Decks', key: 'id' },
       },
