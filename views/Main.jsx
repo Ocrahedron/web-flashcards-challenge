@@ -4,12 +4,14 @@ const Layout = require('./Layout');
 module.exports = function Main() {
   return (
     <Layout>
+      <div className="container">
       <div className="d-flex flex-wrap">
-        <div className="g-col-6 g-col-md-4 mb-3" style={{ width: '300px', height: '250px', margin: '20px', backgroundColor: '#B5E2BA'}}>Карточка 1</div>
-        <div className="g-col-6 g-col-md-4 mb-3" style={{ width: '300px', height: '250px', margin: '20px', backgroundColor: '#B5E2BA'}}>Карточка 2</div>
-        <div className="g-col-6 g-col-md-4 mb-3" style={{ width: '300px', height: '250px', margin: '20px', backgroundColor: '#B5E2BA'}}>Карточка 3</div>
-        <div className="g-col-6 g-col-md-4 mb-3" style={{ width: '300px', height: '250px', margin: '20px', backgroundColor: '#B5E2BA'}}>Карточка 4</div>
-        <div className="g-col-6 g-col-md-4 mb-3" style={{ width: '300px', height: '250px', margin: '20px', backgroundColor: '#B5E2BA'}}>Карточка 5</div>
+        <div id="1" className="g-col-6 g-col-md-4 mb-3 deck">Карточка 1</div>
+        <div id="2" className="g-col-6 g-col-md-4 mb-3 deck">Карточка 2</div>
+        <div id="3" className="g-col-6 g-col-md-4 mb-3 deck">Карточка 3</div>
+        <div id="4" className="g-col-6 g-col-md-4 mb-3 deck">Карточка 4</div>
+        <div id="5" className="g-col-6 g-col-md-4 mb-3 deck">Карточка 5</div>
+      </div>
       </div>
     </Layout>
   );
