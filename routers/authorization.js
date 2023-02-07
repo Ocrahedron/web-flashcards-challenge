@@ -11,10 +11,14 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
+  // const existingUser = await User.findOne({ name: username });
+  // if (existingUser) {
+  //   res.json(`Пользователь с ${username} именем уже существует`);
+  //   return;
+  // }
   try {
     await User.create({ name: username, password });
-    res.redirect('/entering');
+    res.redirect('/');
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'Внутренняя ошибка сервера' });

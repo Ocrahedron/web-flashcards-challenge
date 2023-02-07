@@ -12,6 +12,7 @@ const mainPage = require('./routers/mainpage');
 const authorization = require('./routers/authorization');
 const entering = require('./routers/entering');
 const game = require('./routers/game');
+const account = require('./routers/personalAccount');
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +24,7 @@ app.use('/', mainPage);
 app.use('/authorization', authorization);
 app.use('/entering', entering);
 app.use('/game', game);
+app.use('/account', account);
 
 app.listen(process.env.PORT, async () => {
   try {

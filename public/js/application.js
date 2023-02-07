@@ -20,12 +20,13 @@ gameContainer?.addEventListener('click', async (event) => {
 
     const result = await response.json();
 
+    if (result.redirect) {
+      window.location.href = result.redirect;
+    }
+
     p.innerHTML = result.question;
     buttonYes.setAttribute('data-id', `${result.id}`);
     buttonNo.setAttribute('data-id', `${result.id}`);
- 
-
-  
   } catch (error) {
     console.log(error);
   }
