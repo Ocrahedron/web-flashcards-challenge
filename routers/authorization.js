@@ -5,26 +5,16 @@ const { User } = require('../db/models');
 
 const router = express.Router();
 
-// router.get('/authorization', (req, res) => {
-//   renderTemplate(Authorization, null, res);
-// });
+router.get('/', (req, res) => {
+  renderTemplate(Authorization, null, res);
+});
 
-router.post('/authorization', async (req, res) => {
-  const { name, password } = req.body;
-
+router.post('/', async (req, res) => {
+  const { username, password } = req.body;
+  console.log(req.body);
   try {
-    const user = await User.findOne({ where: { name } });
-
-    if (!user) {
-      return res.status(400).json({ error: 'Неверное имя или пароль' });
-    }
-
-    if (user.password !== password) {
-      return res.status(400).send({ error: 'Неверное имя или пароль' });
-    }
-
-    req.session.user = user;
-    res.redirect('/');
+    await User.create({ name: username, password });
+    res.redirect('/entering');
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'Внутренняя ошибка сервера' });
