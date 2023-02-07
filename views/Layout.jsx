@@ -19,7 +19,6 @@ module.exports = function Layout({ children }) {
           <div className="d-flex justify-content-end">
             <a id="btnAcc" className="btn btn-outline-dark mr-2" href="/account">Account</a>
             <a id="btnReg" className="btn btn-outline-dark mr-2" href="/authorization">Register</a>
-            <a id="btnLog" className="btn btn-outline-dark mr-2" href="/entering">Login</a>
             <a id="btnHom" className="btn btn-outline-dark mr-2" href="/">Home</a>
           </div>
         </nav>

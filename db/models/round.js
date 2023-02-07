@@ -1,5 +1,5 @@
-"use strict";
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Round extends Model {
     /**
@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Round.belongsTo(models.User, { foreignKey: "user_id" });
-      Round.hasOne(models.Deck, { foreignKey: "deck_id" });
+      Round.belongsTo(models.User, { foreignKey: 'user_id' });
+      Round.hasOne(models.Deck, { foreignKey: 'deck_id' });
     }
   }
   Round.init(
     {
-      date: DataTypes.INTEGER,
+      date: DataTypes.DATE,
       user_id: DataTypes.INTEGER,
       deck_id: DataTypes.INTEGER,
       firstAnswer: DataTypes.INTEGER,
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Round",
+      modelName: 'Round',
     },
   );
   return Round;

@@ -17,6 +17,10 @@
 #btnHom {
     margin: 10px;
 }
+#btnAcc {
+  margin: 10px;
+}
+
 .navbar-brand {
     font-weight: bold;
     text-transform: uppercase;
