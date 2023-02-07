@@ -25,6 +25,7 @@ router.post('/:id/:il', async (req, res) => {
     const findCard = await Card.findOne({ where: { id: req.params.il }, raw: true });
 
     // console.log(findCard);
+  
 
     if (findCard.answer === req.body.name) {
       const findAllCards = await Card.findAll({ where: { deck_id: findCard.deck_id }, raw: true });
@@ -33,11 +34,11 @@ router.post('/:id/:il', async (req, res) => {
       // console.log(randomId);
       const card = findAllCards[randomId];
       // const card = findAllCards[3];
-      console.log(card);
+      // console.log(card);
       // renderTemplate(Game, { card }, res);
 
       res.json(card);
-      res.sendStatus(200);
+      // res.sendStatus(200);
       // await Entry.create({ title, body });
     } else {
 

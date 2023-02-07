@@ -1,12 +1,15 @@
 const gameContainer = document.querySelector('.gameContainer');
-// const { Card } = require('../../db/models');
+// const card = document.querySelector('.card');
+const p = document.querySelector('#p');
+const buttonYes = document.querySelector('#yes');
+const buttonNo = document.querySelector('#no');
 
-gameContainer.addEventListener('click', async (event) => {
-  event.preventDefault();
-
+gameContainer?.addEventListener('click', async (event) => {
+  // event.preventDefault();
+  // console.log(event.target.dataset.cardid)
   try {
-    // console.log(event.target.name);
-    const { id, name } = event.target;
+    console.log(event.target);
+    const { id, name } = event.target.dataset;
     console.log(id);
     console.log(name);
     const response = await fetch(`/game/:id/${id}`, {
@@ -14,22 +17,15 @@ gameContainer.addEventListener('click', async (event) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name }),
     });
-    if (response.status === 200) {
-      const result = await response.json();
 
-      // console.log(result);
+    const result = await response.json();
 
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.setAttribute('id', `${result.id}`);
+    p.innerHTML = result.question;
+    buttonYes.setAttribute('data-id', `${result.id}`);
+    buttonNo.setAttribute('data-id', `${result.id}`);
+ 
 
-      card.innerHTML = `
-    <p>${result.question}</p>
-    <button id=${result.id} name="да" type="button">Да</button>
-    <button id=${result.id} name="нет" type="button">Нет</button>
-    `;
-      gameContainer.appendChild(card);
-    }
+  
   } catch (error) {
     console.log(error);
   }
