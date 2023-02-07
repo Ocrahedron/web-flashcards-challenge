@@ -1,11 +1,15 @@
 const express = require('express');
 const renderTemplate = require('../lib/renderTemplate');
-const Entering = require('../views/Entering');
+const Account = require('../views/PersonalAccount');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  renderTemplate(Entering, null, res);
+
+
+
+
+  renderTemplate(Account, null, res);
 });
 
 module.exports = router;
