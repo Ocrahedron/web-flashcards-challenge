@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Card.init({
     question: DataTypes.STRING,
     answer: DataTypes.STRING,
-    deck_id: DataTypes.INTEGER
+    deck_id: DataTypes.INTEGER,
+    check: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Card',
